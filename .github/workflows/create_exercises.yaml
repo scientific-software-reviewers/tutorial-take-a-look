@@ -43,7 +43,11 @@ jobs:
           issueFile: 'issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md'
         if: hashFiles(env.issueFile) !='' 
         run: |
-          echo "BAR=$(gh issue create --title "${{ inputs.language }}: Exercise ${{ matrix.exercise }}" --body-file "issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md" --label ${{ inputs.language }})" >> $GITHUB_ENV
+          echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
+          echo ${{ env.REPO_URL }}
+          cat issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md > issuebody
+          sed -i 's/REPO_URL/${{ REPO_URL }}/g` issuebody
+          echo "BAR=$(gh issue create --title "${{ inputs.language }}: Exercise ${{ matrix.exercise }}" --body-file issuebody --label ${{ inputs.language }})" >> $GITHUB_ENV
       - name: query_branch_exists
         run: |
           echo "FOO=$(git branch -r | grep "${{ inputs.language }}-${{ matrix.exercise }}")" >> $GITHUB_ENV
@@ -52,10 +56,6 @@ jobs:
           if [ '${{ env.FOO }}' == '' ]; then
             echo "no branch ${{ inputs.language }}-${{ matrix.exercise }} to create pull request from"
           else
-             echo ${{ github.event.repository.name }}
-             echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
-             gh repo view --json url --jq '.url'
-             echo ${{ env.REPO_URL }}
              cat pull_requests/${{ inputs.language }}-ex${{ matrix.exercise }}-pullbody.md > pullbody
              echo "Fixes ${{ env.BAR }} ${{ inputs.language }}" >> pullbody
              gh pr create -B main -H "${{ inputs.language }}-${{ matrix.exercise }}" --title 'Exercise ${{ matrix.exercise }} ${{ inputs.language }}.' --body-file pullbody --label ${{ inputs.language }}
