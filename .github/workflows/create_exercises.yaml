@@ -45,6 +45,7 @@ jobs:
         run: |
           echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
           echo ${{ env.REPO_URL }}
+          gh repo view --json url --jq '.url'
           cat issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md > issuebody
           sed -i 's/REPO_URL/${{ env.REPO_URL }}/g' issuebody
           echo "BAR=$(gh issue create --title "${{ inputs.language }}: Exercise ${{ matrix.exercise }}" --body-file issuebody --label ${{ inputs.language }})" >> $GITHUB_ENV
