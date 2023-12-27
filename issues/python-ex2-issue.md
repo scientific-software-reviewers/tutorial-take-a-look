@@ -9,11 +9,11 @@ hour to update the model using observations.
 Each experiment uses observations from +/- 30 minutes from when the model
 is stopped. This +/- 30 minutes is known as the experiment window.
 
-The class [time_window.py](python/exercise2/time_window.py) is the initialized 
+The class [time_window.py](../python/exercise2/time_window.py) is the initialized 
 with the start time, the final time, and the delta (the duration of a single 
 experiment). From these input the number of experiments needed, and the start 
 and stop for both the model and the window are calculated.
-The script [run_test.py](python/exercise/run_test.py) provided by the lab group
+The script [run_test.py](../python/exercise/run_test.py) provided by the lab group
 can be used to demonstrate the bug: run_test.py initializes the class and prints
 the window and model times. 
 

@@ -12,7 +12,7 @@ Worst Chocolate Cake ever! Not even chocolatey
 Yuk! salty
 ```
 
-Take a look at the recipe [cake.md](text/exercise1/cake.md). 
+Take a look at the recipe [cake.md](../text/exercise1/cake.md). 
 
 * Are there any problems?
 * Are there spelling errors?

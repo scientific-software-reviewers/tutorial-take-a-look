@@ -14,7 +14,7 @@ This script is printing the number of consonants.
 Why is `vowel_counter.py` even printing out the number of consonants?  
 ```
 
-Take a look at the python script [python](python/exercise1/vowel_counter.py) 
+Take a look at the python script [python](../python/exercise1/vowel_counter.py) 
 
 * Can you see any errors?
 * Do you need to run the script to test the behavior?
