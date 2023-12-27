@@ -8,7 +8,7 @@ The origami fish instructions are missing at least one step.
 I followed the instructions and did not get a fish.
 ```
 
-Take a look at the instructions.
+Take a look at the instructions [origami.md](text/exercise3/origami.md)
 
 * Are there missing steps?
 * Are the steps in the correct order?

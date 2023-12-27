@@ -12,7 +12,7 @@ Worst Chocolate Cake ever! Not even chocolatey
 Yuk! salty
 ```
 
-Take a look at the recipe. 
+Take a look at the recipe [cake.md](text/exercise1/cake.md). 
 
 * Are there any problems?
 * Are there spelling errors?
@@ -20,7 +20,7 @@ Take a look at the recipe.
 * What would you say are definite changes that need to be made?
 
 
-Take a look a the suggested improvements.
+Take a look a the suggested improvements in the pull request.
 
 * Do the improvements make the recipe better?
 * Are there any unnecessary changes in the pull request?

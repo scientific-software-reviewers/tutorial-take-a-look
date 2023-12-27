@@ -2,7 +2,7 @@
 
 In an article about the Women's world cup there has been a mix up between football, soccer, and the NFL.
 
-Take a look at the article.
+Take a look at the article [world_cup.md](text/exercise2/world_cup.md)
 
 * Are you familiar with the subject matter?
 * Can you review the article without being an expert on the subject?

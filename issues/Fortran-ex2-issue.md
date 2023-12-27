@@ -2,8 +2,9 @@
 
 A team member (Betty) has been working on a project to simulate
 a football league over a season. Betty's code is all in one 
-program in a single file, league_sim.f90. However, Betty would now like to use
-the routines contained in the main program in several of their other programs.
+program in a single file, [league_sim.f90](Fortran/exercise2/league_sim.f90).
+However, Betty would now like to use the routines contained in the main program 
+in several of their other programs.
 
 Betty created a module to enable the routines to be used by other programs and
 submitted their changes in a pull request. They'd like you to take a look at their code 

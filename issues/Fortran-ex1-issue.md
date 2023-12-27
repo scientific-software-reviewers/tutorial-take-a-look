@@ -5,7 +5,7 @@ compare how compiler options affect run time.
 
 However, the program is producing an incorrect value for pi.
 
-Take a look at the code.
+Take a look at the code. [calc_pi.f90](Fortran/exercise1/calc_pi.f90)
 
 * Are there any errors that standout?
 * Is the code easy to understand?
