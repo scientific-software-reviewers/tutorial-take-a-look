@@ -43,12 +43,9 @@ jobs:
           issueFile: 'issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md'
         if: hashFiles(env.issueFile) !='' 
         run: |
-          echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
-          echo ${{ env.REPO_URL }}
-          gh repo view --json url --jq '.url'
           echo $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
           cat issues/${{ inputs.language }}-ex${{ matrix.exercise }}-issue.md > issuebody
-          sed -i 's/REPO_URL/${{ env.REPO_URL }}/g' issuebody
+          sed -i 's|REPO_URL|$GITHUB_SERVER_URL/$GITHUB_REPOSITORY|g' issuebody
           echo "BAR=$(gh issue create --title "${{ inputs.language }}: Exercise ${{ matrix.exercise }}" --body-file issuebody --label ${{ inputs.language }})" >> $GITHUB_ENV
       - name: query_branch_exists
         run: |
