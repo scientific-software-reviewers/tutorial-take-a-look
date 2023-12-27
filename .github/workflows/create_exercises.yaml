@@ -54,7 +54,8 @@ jobs:
           else
              echo ${{ github.event.repository.name }}
              echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
-             echo $REPO_URL
+             gh repo view --json url --jq '.url'
+             echo ${{ env.REPO_URL }}
              cat pull_requests/${{ inputs.language }}-ex${{ matrix.exercise }}-pullbody.md > pullbody
              echo "Fixes ${{ env.BAR }} ${{ inputs.language }}" >> pullbody
              gh pr create -B main -H "${{ inputs.language }}-${{ matrix.exercise }}" --title 'Exercise ${{ matrix.exercise }} ${{ inputs.language }}.' --body-file pullbody --label ${{ inputs.language }}
