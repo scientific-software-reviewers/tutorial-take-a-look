@@ -53,7 +53,7 @@ jobs:
             echo "no branch ${{ inputs.language }}-${{ matrix.exercise }} to create pull request from"
           else
              echo ${{ github.event.repository.name }}
-             echo "REPO_URL=$(gh repo view owner/repo --json url --jq '.url')" >> $GITHUB_ENV
+             echo "REPO_URL=$(gh repo view --json url --jq '.url')" >> $GITHUB_ENV
              echo $REPO_URL
              cat pull_requests/${{ inputs.language }}-ex${{ matrix.exercise }}-pullbody.md > pullbody
              echo "Fixes ${{ env.BAR }} ${{ inputs.language }}" >> pullbody
