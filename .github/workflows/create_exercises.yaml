@@ -52,7 +52,7 @@ jobs:
           if [ '${{ env.FOO }}' == '' ]; then
             echo "no branch ${{ inputs.language }}-${{ matrix.exercise }} to create pull request from"
           else
-             echo github.event.repository.name 
+             echo ${{ github.event.repository.name }}
              cat pull_requests/${{ inputs.language }}-ex${{ matrix.exercise }}-pullbody.md > pullbody
              echo "Fixes ${{ env.BAR }} ${{ inputs.language }}" >> pullbody
              gh pr create -B main -H "${{ inputs.language }}-${{ matrix.exercise }}" --title 'Exercise ${{ matrix.exercise }} ${{ inputs.language }}.' --body-file pullbody --label ${{ inputs.language }}
