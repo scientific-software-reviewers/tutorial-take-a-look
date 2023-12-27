@@ -24,7 +24,7 @@ for each of the windows were incorrect.
 The lab group want to add some error checking to the python script to prevent
 this error happening again. 
 
-Take a look at the script:
+Take a look at [time_window.py](REPO_URL/python/exercise2/time_window.py):
 
 * Where would you put the error check?
 * Are there other error checks that you think should be included in the script?
